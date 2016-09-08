@@ -8,11 +8,11 @@
 
 import WebKit
 
-extension WKWebView {
-    func removeAllOtherElements(element: String) {
+public extension WKWebView {
+    public func stripAllElementsExcept(elementWithId: String) {
         let tempDelegate = self.navigationDelegate
         self.navigationDelegate = nil
-        self.evaluateJavaScript("document.body.innerHTML = document.getElementById('\(element)').innerHTML;", completionHandler: nil);
+        self.evaluateJavaScript("document.body.innerHTML = document.getElementById('\(elementWithId)').innerHTML;", completionHandler: nil);
         self.navigationDelegate = tempDelegate
     }
 }

@@ -7,18 +7,43 @@
 //
 
 import UIKit
+import WebKit
+import WebView_Utilities
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
+    var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupView()
+        setupConstraints()
+
+        if let url = NSURL(string: "http://www.stellar16.com") {
+            let request = NSURLRequest(URL: url)
+            webView.loadRequest(request)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func setupView() {
+        webView = WKWebView(frame: self.view.bounds)
+        webView.navigationDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(webView)
     }
 
+    private func setupConstraints() {
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[webView]|",
+            options: .DirectionLeadingToTrailing,
+            metrics: nil,
+            views: ["webView": webView]))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[webView]|",
+            options: .DirectionLeadingToTrailing,
+            metrics: nil,
+            views: ["webView": webView]))
+    }
+
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+        webView.stripAllElementsExcept("masthead")
+    }
 }
 
