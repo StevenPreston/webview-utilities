@@ -1,0 +1,22 @@
+{
+  "name": "WebView-Utilities",
+  "version": "0.1.0",
+  "summary": "A short description of WebView-Utilities.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/WebView-Utilities",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Steven Preston": "stevenpreston@stellar16.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/WebView-Utilities.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WebView-Utilities/Classes/**/*"
+}

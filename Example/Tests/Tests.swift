@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import WebView-Utilities
+import WebView_Utilities
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {

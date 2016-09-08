@@ -1,0 +1,6 @@
+framework module WebView_Utilities {
+  umbrella header "WebView-Utilities-umbrella.h"
+
+  export *
+  module * { export * }
+}
