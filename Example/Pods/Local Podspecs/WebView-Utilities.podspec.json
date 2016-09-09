@@ -1,9 +1,9 @@
 {
   "name": "WebView-Utilities",
   "version": "0.1.0",
-  "summary": "A short description of WebView-Utilities.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/WebView-Utilities",
+  "summary": "A library of helper functions to manipulate the DOM within a WKWebView.",
+  "description": "A library of helper functions to manipulate the DOM within a WKWebView. Currently, the only function available is to specify an element to keep with all others removed.",
+  "homepage": "https://github.com/StevenPreston/webview-utilities",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "Steven Preston": "stevenpreston@stellar16.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/WebView-Utilities.git",
+    "git": "https://github.com/StevenPreston/webview-utilities.git",
     "tag": "0.1.0"
   },
   "platforms": {

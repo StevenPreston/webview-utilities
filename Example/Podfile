@@ -4,9 +4,9 @@ target 'WebView-Utilities_Example' do
   pod 'WebView-Utilities', :path => '../'
 
   target 'WebView-Utilities_Tests' do
-    inherit! :search_paths
+    pod 'WebView-Utilities', :path => '../'
 
     pod 'Quick', '~> 0.8'
-  pod 'Nimble', '~> 3.0'
+    pod 'Nimble', '~> 3.0'
   end
 end
