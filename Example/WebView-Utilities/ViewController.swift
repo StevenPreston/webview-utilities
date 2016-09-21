@@ -43,7 +43,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
 
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        webView.stripAllElementsExcept("masthead", completionHandler: nil)
+        webView.stripAllOtherElementsFromBody("masthead", completionHandler: nil)
     }
 }
 
