@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WebView-Utilities'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'A library of helper functions to manipulate the DOM within a WKWebView.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,12 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A library of helper functions to manipulate the DOM within a WKWebView. Currently, the only function available is to specify an element to keep with all others removed.
+A library of helper functions (available through an extension to WKWebView) to manipulate the DOM within a WKWebView. Functions available:
+* stripAllOtherElementsFromBody - removes all except one element from HTML body.
+* clearHead - removes all inner HTML from the head element.
+* addElementToHead - adds an element to the head.
+* removeElement - removes an element from the DOM.
+* addCSS - add CSS to the document head.
                        DESC
 
   s.homepage         = 'https://github.com/StevenPreston/webview-utilities'
