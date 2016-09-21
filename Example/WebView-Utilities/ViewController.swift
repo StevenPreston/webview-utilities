@@ -43,7 +43,25 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
 
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        webView.stripAllOtherElementsFromBody("masthead", completionHandler: nil)
+        webView.stripAllOtherElementsFromBody("masthead") {_, _ in
+            self.clearHead()
+        }
+    }
+
+    func clearHead() {
+        webView.clearHead() { _, _ in
+            self.addElementToHead()
+        }
+    }
+
+    func addElementToHead() {
+        let viewport = "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" >"
+        webView.addElementToHead(viewport) { _, _ in
+            self.addCSS()
+        }
+    }
+
+    func addCSS() {
+        webView.addCSS("#masthead { color: red; }", completionHandler: nil)
     }
 }
-

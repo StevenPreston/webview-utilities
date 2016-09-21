@@ -67,7 +67,7 @@ class WKWebView_UtilitiesSpec: QuickSpec {
 
         describe("clearHeadJS") {
             it("should return a Javascript value of true") {
-                webView.clearHead({ webResult = resultHandler($0, $1) })
+                webView.clearHead() { webResult = resultHandler($0, $1) }
                 expect(webResult.noError).toEventually(beTrue())
                 expect(webResult.response).to(beTrue())
             }
@@ -76,7 +76,7 @@ class WKWebView_UtilitiesSpec: QuickSpec {
         describe("WKWebView.stripAllOtherElementsFromBody") {
             context("when the element to keep exists") {
                 it("should return a Javascript value of true") {
-                    webView.stripAllOtherElementsFromBody("keep", completionHandler: { webResult = resultHandler($0, $1) })
+                    webView.stripAllOtherElementsFromBody("keep") { webResult = resultHandler($0, $1) }
                     expect(webResult.noError).toEventually(beTrue())
                     expect(webResult.response).to(beTrue())
                 }
@@ -84,7 +84,7 @@ class WKWebView_UtilitiesSpec: QuickSpec {
 
             context("when the element to keep does not exist") {
                 it("should return a Javascript value of true") {
-                    webView.stripAllOtherElementsFromBody("nonexistent", completionHandler: { webResult = resultHandler($0, $1) })
+                    webView.stripAllOtherElementsFromBody("nonexistent") { webResult = resultHandler($0, $1) }
                     expect(webResult.noError).toEventually(beTrue())
                     expect(webResult.response).to(beFalse())
                 }
@@ -94,7 +94,7 @@ class WKWebView_UtilitiesSpec: QuickSpec {
         describe("WKWebView.addElementToHead") {
             it("should return a Javascript value of true") {
                 let elementHTML = "<style>body{margin: 20px;}</style>"
-                webView.addElementToHead(elementHTML, completionHandler: { webResult = resultHandler($0, $1) })
+                webView.addElementToHead(elementHTML) { webResult = resultHandler($0, $1) }
                 expect(webResult.noError).toEventually(beTrue())
                 expect(webResult.response).to(beTrue())
             }
@@ -103,7 +103,7 @@ class WKWebView_UtilitiesSpec: QuickSpec {
         describe("WKWebView.removeElement") {
             context("when the element to keep exists") {
                 it("should return a Javascript value of true") {
-                    webView.removeElement("remove", completionHandler: { webResult = resultHandler($0, $1) })
+                    webView.removeElement("remove") { webResult = resultHandler($0, $1) }
                     expect(webResult.noError).toEventually(beTrue())
                     expect(webResult.response).to(beTrue())
                 }
@@ -111,7 +111,7 @@ class WKWebView_UtilitiesSpec: QuickSpec {
 
             context("when the element to keep does not exist") {
                 it("should return a Javascript value of true") {
-                    webView.removeElement("nonexistent", completionHandler: { webResult = resultHandler($0, $1) })
+                    webView.removeElement("nonexistent") { webResult = resultHandler($0, $1) }
                     expect(webResult.noError).toEventually(beTrue())
                     expect(webResult.response).to(beFalse())
                 }
@@ -121,7 +121,7 @@ class WKWebView_UtilitiesSpec: QuickSpec {
         describe("WKWebView.addCSS") {
             it("should return a Javascript value of true") {
                 let css = "body{margin: 20px;}"
-                webView.addCSS(css, completionHandler: { webResult = resultHandler($0, $1) })
+                webView.addCSS(css) { webResult = resultHandler($0, $1) }
                 expect(webResult.noError).toEventually(beTrue())
                 expect(webResult.response).to(beTrue())
             }
